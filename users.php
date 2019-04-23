@@ -1,6 +1,6 @@
 <?php
 require('connect.php');
-//$sql = mysqli_query($link, 'SELECT `ID`, `Name`, `Price` FROM `products`');
+session_start();
 $query="SELECT * FROM users_marsakov ";
 $resultat=mysqli_query($connection,$query);
 ?>
@@ -27,6 +27,7 @@ $resultat=mysqli_query($connection,$query);
 
 <form  action="registration.php" method="post">
     <div id="content1">
+        <p><?php echo $_SESSION['result']  ?></p>
         <p align="center"> Добавить или удалить пользователя</p>
         <p><input type=text size=15 name=name2 placeholder="Введите имя"></p>
         <p><input type=password size=15 name=password2 placeholder="Пароль"> </p>
